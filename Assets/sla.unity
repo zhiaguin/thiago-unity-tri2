@@ -111,7 +111,7 @@ NavMeshSettings:
     accuratePlacement: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: eba81cc1a0c41ba42bda3cc45cb8954d, type: 2}
 --- !u!1 &844228725
 GameObject:
   m_ObjectHideFlags: 0
