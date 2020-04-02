@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 426129561355500934}
   - component: {fileID: 426129561355500935}
   - component: {fileID: 426129561355500952}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -103,7 +103,6 @@ GameObject:
   - component: {fileID: 426129562151488238}
   - component: {fileID: 426129562151488235}
   - component: {fileID: 426129562151488236}
-  - component: {fileID: 426129562151488237}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -170,19 +169,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!135 &426129562151488237
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 426129562151488239}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &426129562899575225
 GameObject:
   m_ObjectHideFlags: 0
@@ -197,6 +183,7 @@ GameObject:
   - component: {fileID: 426129562899575224}
   - component: {fileID: 6978295340297234321}
   - component: {fileID: 3162377201641106022}
+  - component: {fileID: 6194876817051249469}
   m_Layer: 0
   m_Name: Creep
   m_TagString: Untagged
@@ -274,6 +261,8 @@ MonoBehaviour:
   ofenseStats:
     damage: 10
     attackSpeed: 1
+  enemyLayers:
+  - Infantry
 --- !u!114 &6978295340297234321
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -306,6 +295,19 @@ MonoBehaviour:
   healthUIPrefab: {fileID: 7562174830085966485, guid: ef5222ea501c6674ab480efeccf075bc,
     type: 3}
   healthPosition: {fileID: 1443666713646442770}
+--- !u!135 &6194876817051249469
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 426129562899575225}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 6
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8804793297637823052
 GameObject:
   m_ObjectHideFlags: 0
