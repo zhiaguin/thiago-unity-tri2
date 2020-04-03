@@ -457,6 +457,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf1988b087d94b84591248285eb8d3c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  angularSpeed: 6
   contactRadius: 1.5
   defenseStats:
     maxHealth: 100
@@ -1254,6 +1255,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f1f9d6cb2874054f81a346ded06af53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  angularSpeed: 6
   contactRadius: 0.5
   walkableLayer:
     serializedVersion: 2
@@ -1401,7 +1403,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3610672480497394143}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.45, y: 0, z: 9.22}
+  m_LocalPosition: {x: 11.61, y: 0, z: 9.22}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3610672481101917695}
@@ -1443,10 +1445,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76b2d89b30fec114ebf67d525ec4e479, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  angularSpeed: 6
   contactRadius: 0.5
   ofenseStats:
     damage: 10
     attackSpeed: 1
+  attackRange: 4
   enemyLayers:
   - Creep
   enemiesToAttack: []
@@ -1660,6 +1664,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf1988b087d94b84591248285eb8d3c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  angularSpeed: 6
   contactRadius: 0.5
   defenseStats:
     maxHealth: 100
