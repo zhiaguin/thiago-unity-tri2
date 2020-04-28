@@ -463,6 +463,7 @@ MonoBehaviour:
     maxHealth: 100
     armor: 1
   currentHealth: 0
+  damageTransform: {fileID: 0}
 --- !u!114 &738879114
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1670,3 +1671,4 @@ MonoBehaviour:
     maxHealth: 100
     armor: 1
   currentHealth: 0
+  damageTransform: {fileID: 0}
