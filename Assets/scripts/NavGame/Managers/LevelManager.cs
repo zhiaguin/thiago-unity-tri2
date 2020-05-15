@@ -19,6 +19,7 @@ namespace NavGame.Managers
         public OnActionCooldownUpdateEvent onActionCooldownUpdate;
         public OnResourceUpdateEvent onResourceUpdate;
         public OnReportableErrorEvent onReportableError;
+        public OnWaveUpdateEvent onWaveUpdate;
 
         protected int selectedAction = -1;
         protected LevelData levelData = new LevelData();
@@ -35,6 +36,12 @@ namespace NavGame.Managers
             }
         }
 
+
+        protected virtual void Start()
+        {
+            StartCoroutine(SpawnBad());
+        }
+
         public virtual void AddResource(int amount)
         {
             levelData.AddCoins(amount);
@@ -43,11 +50,6 @@ namespace NavGame.Managers
             {
                 onResourceUpdate(levelData.CoinCount);
             }
-        }
-
-        void Start()
-        {
-            StartCoroutine(SpawnBad());
         }
 
         public virtual void SelectAction(int actionIndex)
