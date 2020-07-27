@@ -9,6 +9,7 @@ public class UIManager : MonoBehaviour
     public GameObject errorPanel;
     public Text errorText;
     public float errorTime = 1.5f;
+
     public Text coinText;
     public Text waveCountText;
     public Text waveCountdownText;
@@ -31,14 +32,12 @@ public class UIManager : MonoBehaviour
     void Start()
     {
         InitializeUI();
-
     }
 
-   
     void InitializeUI()
     {
         cooldownImages = new Image[cooldownObjects.Length];
-        for(int i = 0; i < cooldownObjects.Length; i++)
+        for (int i = 0; i < cooldownObjects.Length; i++)
         {
             cooldownImages[i] = cooldownObjects[i].GetComponent<Image>();
             cooldownImages[i].fillAmount = 0f;
@@ -52,6 +51,7 @@ public class UIManager : MonoBehaviour
     {
         cooldownImages[actionIndex].fillAmount = 1f;
     }
+
     void OnActionCancel(int actionIndex)
     {
         cooldownImages[actionIndex].fillAmount = 0f;
@@ -67,12 +67,12 @@ public class UIManager : MonoBehaviour
     {
         coinText.text = "x " + currentAmount;
     }
+
     void OnReportableError(string message)
     {
         errorText.text = message;
         errorPanel.SetActive(true);
-    
-        StartCoroutine(TurnOffError()); 
+        StartCoroutine(TurnOffError());
     }
 
     void OnWaveUpdate(int totalWaves, int currentWave)
@@ -80,7 +80,7 @@ public class UIManager : MonoBehaviour
         waveCountText.text = currentWave + " / " + totalWaves;
     }
 
-    void OnWaveCountdown (float remainingTime)
+    void OnWaveCountdown(float remainingTime)
     {
         waveCountdownText.text = remainingTime.ToString("F1");
     }

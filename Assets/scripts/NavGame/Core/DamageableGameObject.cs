@@ -2,21 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace NavGame.Core {
-    public class DamageableGameObject : TouchableGameObject {
+namespace NavGame.Core
+{
+    public class DamageableGameObject : TouchableGameObject
+    {
         public DefenseStats defenseStats;
         public int currentHealth;
         public Transform damageTransform;
 
         public OnDamageTakenEvent onDamageTaken;
-        
         public OnHealthChangedEvent onHealthChanged;
         public OnDiedEvent onDied;
 
         protected virtual void Awake()
         {
             currentHealth = defenseStats.maxHealth;
-            if(damageTransform==null)
+            if (damageTransform == null)
             {
                 damageTransform = transform;
             }
@@ -24,21 +25,22 @@ namespace NavGame.Core {
 
         public void TakeDamage(int amount)
         {
-            amount = amount - defenseStats.armor;
+            amount -= defenseStats.armor;
             amount = Mathf.Clamp(amount, 1, defenseStats.maxHealth);
 
-            currentHealth = currentHealth - amount;
+            currentHealth -= amount;
 
-            if(onDamageTaken!=null)
+            if (onDamageTaken != null)
             {
                 onDamageTaken(damageTransform.position, amount);
             }
+
             if (onHealthChanged != null)
             {
                 onHealthChanged(defenseStats.maxHealth, currentHealth);
             }
 
-            if(currentHealth <=0 )
+            if (currentHealth <= 0)
             {
                 Die();
             }
@@ -47,7 +49,7 @@ namespace NavGame.Core {
         public virtual void Die()
         {
             Destroy(gameObject);
-            if(onDied != null)
+            if (onDied != null)
             {
                 onDied();
             }

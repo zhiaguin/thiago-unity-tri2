@@ -4,7 +4,6 @@ using UnityEngine;
 
 namespace NavGame.Misc
 {
-
     public class DestroyWithDelay : MonoBehaviour
     {
         public float delay = 2f;
@@ -13,7 +12,5 @@ namespace NavGame.Misc
         {
             Destroy(gameObject, delay);
         }
-
-
     }
 }

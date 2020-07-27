@@ -9,19 +9,18 @@ namespace NavGame.Effects
     public class DamageableEffects : SFXController
     {
         public string damageSound;
-
         public string dieSound;
 
         public GameObject damageEffects;
-
         public GameObject dieEffect;
-    
+
         void Awake()
         {
             DamageableGameObject damageable = GetComponent<DamageableGameObject>();
             damageable.onDamageTaken += OnDamageTaken;
             damageable.onDied += OnDied;
         }
+
         protected virtual void OnDamageTaken(Vector3 strikePoint, int amount)
         {
             PlayEffects(strikePoint, damageSound, damageEffects, Quaternion.identity);
@@ -31,6 +30,5 @@ namespace NavGame.Effects
         {
             PlayEffects(transform.position, dieSound, dieEffect, Quaternion.identity);
         }
-       
     }
 }

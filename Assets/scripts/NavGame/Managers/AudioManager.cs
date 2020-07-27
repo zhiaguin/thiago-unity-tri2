@@ -1,16 +1,17 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System;
 
 namespace NavGame.Managers
 {
-
     public class AudioManager : MonoBehaviour
     {
         public static AudioManager instance;
         public Clip[] clips;
+
         Dictionary<string, AudioClip> dict = new Dictionary<string, AudioClip>();
+
         void Awake()
         {
             if (instance == null)

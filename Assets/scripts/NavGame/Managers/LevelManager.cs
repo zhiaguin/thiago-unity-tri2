@@ -9,7 +9,6 @@ namespace NavGame.Managers
 {
     public abstract class LevelManager : MonoBehaviour
     {
-
         public static LevelManager instance;
         public Action[] actions;
         public string errorSound;
@@ -37,7 +36,6 @@ namespace NavGame.Managers
             }
         }
 
-
         protected virtual void Start()
         {
             StartCoroutine(SpawnBad());
@@ -46,7 +44,6 @@ namespace NavGame.Managers
         public virtual void AddResource(int amount)
         {
             levelData.AddCoins(amount);
-            Debug.Log(levelData.CoinCount);
             if (onResourceUpdate != null)
             {
                 onResourceUpdate(levelData.CoinCount);
@@ -70,15 +67,16 @@ namespace NavGame.Managers
                     onActionSelect(actionIndex);
                 }
             }
-            catch(InvalidOperationException e)
+            catch (InvalidOperationException e)
             {
                 AudioManager.instance.Play(errorSound, PlayerManager.instance.GetPlayer().transform.position);
-                if (onReportableError!=null)
+                if (onReportableError != null)
                 {
                     onReportableError(e.Message);
                 }
             }
         }
+
         public virtual void DoAction(Vector3 point)
         {
             try
@@ -105,11 +103,11 @@ namespace NavGame.Managers
 
         public virtual void CancelAction()
         {
-            if(selectedAction != -1)
+            if (selectedAction != -1)
             {
                 int index = selectedAction;
                 selectedAction = -1;
-                if(onActionCancel != null)
+                if (onActionCancel != null)
                 {
                     onActionCancel(index);
                 }
@@ -125,9 +123,9 @@ namespace NavGame.Managers
         {
             Action action = actions[actionIndex];
             action.coolDown = action.waitTime;
-            while (action.coolDown > 0)
+            while (action.coolDown > 0f)
             {
-                if(onActionCooldownUpdate != null)
+                if (onActionCooldownUpdate != null)
                 {
                     onActionCooldownUpdate(actionIndex, action.coolDown, action.waitTime);
                 }

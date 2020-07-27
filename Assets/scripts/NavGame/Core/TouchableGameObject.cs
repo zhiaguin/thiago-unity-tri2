@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace NavGame.Core {
-    public class TouchableGameObject : BasicGameObject {
+namespace NavGame.Core
+{
+    public class TouchableGameObject : BasicGameObject
+    {
         public float contactRadius = 0.5f;
 
         public bool IsInTouch(TouchableGameObject other)

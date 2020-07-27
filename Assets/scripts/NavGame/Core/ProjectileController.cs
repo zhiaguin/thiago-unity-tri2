@@ -10,23 +10,20 @@ namespace NavGame.Core
         public float speed = 8f;
         public OnAttackStrikeEvent onAttackStrike;
 
-       
         DamageableGameObject target;
-
         int damage;
         bool isInit = false;
 
-  
+
         void Start()
         {
-            if(!isInit)
+            if (!isInit) 
             {
                 Debug.LogError("ProjectileController Init was not called");
                 Destroy(gameObject);
             }
         }
 
-        
         void Update()
         {
             if (target == null)
@@ -34,14 +31,16 @@ namespace NavGame.Core
                 Destroy(gameObject);
                 return;
             }
+
             transform.position = Vector3.MoveTowards(transform.position, target.damageTransform.position, speed * Time.deltaTime);
 
             float distance = Vector3.Distance(transform.position, target.damageTransform.position);
-            if (distance < tolerance)
+
+            if (distance < tolerance) 
             {
                 target.TakeDamage(damage);
                 Destroy(gameObject);
-                if (onAttackStrike!=null)
+                if (onAttackStrike != null)
                 {
                     onAttackStrike(target.damageTransform.position);
                 }

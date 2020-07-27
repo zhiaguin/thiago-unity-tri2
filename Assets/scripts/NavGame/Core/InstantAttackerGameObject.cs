@@ -6,6 +6,7 @@ namespace NavGame.Core
 {
     public class InstantAttackerGameObject : AttackGameObject
     {
+
         protected override void Attack(DamageableGameObject target)
         {
             target.TakeDamage(ofenseStats.damage);
@@ -17,3 +18,4 @@ namespace NavGame.Core
         }
     }
 }
+

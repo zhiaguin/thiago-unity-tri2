@@ -8,20 +8,18 @@ public class GeneratorController : MonoBehaviour
     public GameObject prefab;
 
     public float firstDelay = 5f;
-
     public float delay = 10f;
-
     public string generateSound;
 
     void Start()
     {
         StartCoroutine(Generate());
     }
-    
+
     IEnumerator Generate()
     {
         yield return new WaitForSeconds(firstDelay);
-        while(true)
+        while (true)
         {
             float offsetx = Random.Range(-0.2f, 0.2f);
             float offsetz = Random.Range(-0.2f, 0.2f);

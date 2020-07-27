@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-
 namespace NavGame.Core
 {
     [RequireComponent(typeof(DamageableGameObject))]
@@ -39,7 +38,7 @@ namespace NavGame.Core
             if (healthUI != null)
             {
                 healthUI.transform.position = healthPosition.position;
-                healthUI.transform.forward = -cam.forward;
+                healthUI.transform.forward = -cam.forward; 
             }
         }
 
@@ -59,13 +58,15 @@ namespace NavGame.Core
         {
             if (healthUI != null)
             {
-                float healthPercent = (float)currentHealth / maxHealth;
+                float healthPercent = (float) currentHealth / maxHealth;
                 healthSlider.fillAmount = healthPercent;
             }
         }
+
         void DestroyHealth()
         {
             Destroy(healthUI);
         }
     }
 }
+

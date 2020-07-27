@@ -24,8 +24,6 @@ public class PlayerController : TouchableGameObject
     {
         agent = GetComponent<NavMeshAgent>();
         cam = Camera.main;
-
-       
     }
 
     void Update()
@@ -42,7 +40,6 @@ public class PlayerController : TouchableGameObject
             LevelManager.instance.CancelAction();
             actionPoint = Vector3.zero;
 
-
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
@@ -56,7 +53,7 @@ public class PlayerController : TouchableGameObject
                 pickupTarget = hit.collider.gameObject.GetComponent<CollectibleGameObject>();
                 agent.SetDestination(hit.point);
             }
-            else
+            else 
             {
                 pickupTarget = null;
             }
@@ -70,10 +67,10 @@ public class PlayerController : TouchableGameObject
             {
                 actionPoint = hit.point;
                 agent.SetDestination(hit.point);
-            }
+            }            
         }
 
-        if(Input.GetKeyDown(KeyCode.Alpha1))
+        if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             LevelManager.instance.SelectAction(0);
         }
@@ -89,7 +86,7 @@ public class PlayerController : TouchableGameObject
 
     void UpdateCollect()
     {
-        if(pickupTarget != null)
+        if (pickupTarget != null) 
         {
             if (IsInTouch(pickupTarget))
             {
@@ -103,7 +100,7 @@ public class PlayerController : TouchableGameObject
     {
         if (actionPoint != Vector3.zero)
         {
-            if(Vector3.Distance(transform.position, actionPoint)<= range)
+            if (Vector3.Distance(transform.position, actionPoint) <= range)
             {
                 agent.ResetPath();
                 LevelManager.instance.DoAction(actionPoint);

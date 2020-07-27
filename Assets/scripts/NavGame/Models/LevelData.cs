@@ -8,7 +8,6 @@ namespace NavGame.Models
 
         public void AddCoins(int amount)
         {
-            
             CoinCount += amount;
         }
 
@@ -20,7 +19,7 @@ namespace NavGame.Models
 
         public void ValidateCoinAmount(int amount)
         {
-            if(CoinCount < amount)
+            if (CoinCount < amount)
             {
                 throw new InvalidOperationException("Need " + amount + " coins!");
             }

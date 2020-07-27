@@ -9,9 +9,8 @@ public class TowerController : ThrowerGameObject
     {
         if (enemiesToAttack.Count > 0)
         {
-    
-                FaceObjectFrame(enemiesToAttack[0].gameObject.transform);
-                AttackOnCooldown(enemiesToAttack[0]);
+            FaceObjectFrame(enemiesToAttack[0].gameObject.transform);
+            AttackOnCooldown(enemiesToAttack[0]);
         }
     }
 }
