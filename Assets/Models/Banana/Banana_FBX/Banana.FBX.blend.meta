@@ -13,8 +13,11 @@ ModelImporter:
     400006: Lamp
     2000000: Camera
     2100000: Material.003
+    2100002: Material_003__Banana_BaseColor_png
     2300000: Banana
+    2300002: //RootNode
     3300000: Banana
+    3300002: //RootNode
     4300000: Banana
     10800000: Lamp
   externalObjects: {}
