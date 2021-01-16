@@ -64,6 +64,7 @@ ModelImporter:
     2300026: Sphere
     2300028: Sphere.001
     2300030: Vert.001
+    2300032: //RootNode
     3300000: Boot01
     3300002: "cal\xE7a"
     3300004: camiseta
@@ -80,6 +81,7 @@ ModelImporter:
     3300026: Sphere
     3300028: Sphere.001
     3300030: Vert.001
+    3300032: //RootNode
     4300000: camiseta
     4300002: Vert.001
     4300004: Cylinder.001
